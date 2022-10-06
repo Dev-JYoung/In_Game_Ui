@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Tsingtao_UI</title>
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="mainScreen">
+      <div class="mainScreenTopBar">
+        <img src="assets/Platinum1.png" class="rotate">
+        <span>안녕하세요</span>
+      </div>
+      <div class="mainScreenBar"></div>
+      <div class="health">
+        <span class="uiProfileHealthBarFrontMainText">{{display_health}}%</span>
+        <div class="healthbarPercent" :style="{width: display_health + '%'}"></div>
+      </div>
+      <div class="mainScreenUserStatus">
+        <i class="fa-solid fa-shield"></i>
+        <div class="mainScreenUserArmor">
+          <span class="uiProfileArmorBarFrontMainText">{{display_shield}}%</span>
+          <div class="armorbarPercent" :style="{width: display_shield + '%'}"></div>
+        </div>
+        <i class="fa-solid fa-utensils"></i>
+        <div class="mainScreenUserHunger">
+          <span class="uiProfileHungerBarFrontMainText">{{display_hunger}}%</span>
+          <div class="hungerbarPercent" :style="{width: display_hunger + '%'}"></div>
+        </div>
+        <i class="fa-solid fa-glass-water"></i>
+        <div class="mainScreenUserThirst">
+          <span class="uiProfileThirstBarFrontMainText">{{display_thirst}}%</span>
+          <div class="ThirstbarPercent" :style="{width: display_thirst + '%'}"></div>
+        </div>
+      </div>
+      <div class="mainScreenUserMoney">
+        <div class="mainScreenUserCash">
+          <i class="fa-solid fa-won-sign"></i>
+          <span class="mainScreenUserCashText">{{userMoney.toLocaleString()}}</span>
+        </div>
+        <div class="mainScreenUserBank">
+          <i class="fa-solid fa-credit-card"></i>
+          <span class="mainScreenUserBankText">{{userCard.toLocaleString()}}</span>
+        </div>
+        <div class="mainScreenUserRandomBox">
+          <i class="fa-solid fa-gift"></i>
+          <span class="mainScreenUserRandomBox">{{randomBoxCount}}</span>
+        </div>
+      </div>
+      <div class="mainScreenUser">
+        <div class="mainScreenUserJob">
+          <i class="fa-solid fa-briefcase"></i>
+          <span class="mainScreenUserJobText">{{userJob}}</span>
+        </div>
+        <div class="mainScreenUserName">
+          <i class="fa-solid fa-user"></i>
+          <span class="mainScreenUserNameText">{{userName}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="mainScreenBottomBar">
+      <div class="mainScreenBottomBarMain">
+        <div class="mainScreenBottomBarUserCount">
+          <i class="fa-solid fa-users"></i>
+          <span class="mainScreenBottomBarUserCountText">{{userCount}}<span class="mainScreenBottomBarUserCountSubText">명</span></span>
+        </div>
+        <div class="mainScreenBottomBarUserPing">
+          <i class="fa-solid fa-wifi"></i>
+          <span class="mainScreenBottomBarUserPingText">{{userPing}}<span class="mainScreenBottomBarUserPingSubText">Ping</span></span>
+        </div>
+        <div class="mainScreenBottomBarUserFps">
+          <i class="fa-solid fa-desktop"></i>
+          <span class="mainScreenBottomBarUserFpsText">{{userFps}}<span class="mainScreenBottomBarUserFpsSubText">Fps</span></span>
+        </div>
+        <div class="mainScreenBottomBarUserOwnNumber">
+          <i class="fa-solid fa-hashtag"></i>
+          <span class="mainScreenBottomBarUserOwnNumberText">{{userOwnNumber}}<span class="mainScreenBottomBarUserOwnNumberSubText">번</span></span>
+        </div>
+        <div class="mainScreenBottomBarUserPhoneNumber">
+          <i class="fa-solid fa-phone"></i>
+          <span class="mainScreenBottomBarUserPhoneNumberText">{{userPhoneNumber}}</span>
+        </div>
+        <div class="mainScreenBottomBarCurrentTime">
+          <i class="fa-solid fa-phone"></i>
+          <span class="mainScreenBottomBarCurrentTimeText">{{year}}년 {{month}}월 {{date}}일 {{hour}}시 {{minute}}분 {{second}}초</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+</html>
